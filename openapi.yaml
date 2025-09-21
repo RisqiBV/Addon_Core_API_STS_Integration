@@ -1,0 +1,46 @@
+openapi: 3.0.3
+info:
+  title: JS Docker API Starter
+  version: "1.0.0"
+  description: Minimal REST API running in Docker
+servers:
+  - url: http://localhost:3000
+paths:
+  /health:
+    get:
+      summary: Health check
+      responses:
+        "200":
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  uptime:
+                    type: number
+                  timestamp:
+                    type: string
+                    format: date-time
+  /api/v1/greet:
+    get:
+      summary: Greet someone
+      parameters:
+        - in: query
+          name: name
+          schema:
+            type: string
+          required: false
+          description: Name to greet
+      responses:
+        "200":
+          description: Greeting message
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string

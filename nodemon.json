@@ -1,0 +1,9 @@
+{
+  "watch": ["src", "openapi.yaml", ".env"],
+  "ext": "js,json,yaml",
+  "ignore": ["node_modules"],
+  "env": {
+    "NODE_ENV": "development",
+    "PORT": "3000"
+  }
+}
